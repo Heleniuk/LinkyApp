@@ -9,17 +9,16 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 
 public class SpringWebAppInitializer implements WebApplicationInitializer {
-	
-    public void onStartup(ServletContext container) throws 	ServletException {
-    	
-        AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
-        appContext.register(ApplicationContextConfig.class);
 
-        ServletRegistration.Dynamic dispatcher = container.addServlet(
-                "Links", new DispatcherServlet(appContext));
-        dispatcher.setLoadOnStartup(1);
-        dispatcher.addMapping("/");    
-        
-    }
+	public void onStartup(ServletContext container) throws ServletException {
+
+		AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
+		appContext.register(ApplicationContextConfig.class);
+
+		ServletRegistration.Dynamic dispatcher = container.addServlet("Links", new DispatcherServlet(appContext));
+		dispatcher.setLoadOnStartup(1);
+		dispatcher.addMapping("/");
+
+	}
+
 }
-    

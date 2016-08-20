@@ -9,10 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class DefaultController {
 
-	@RequestMapping(method = RequestMethod.GET)   
-    public ModelAndView defaultRedirect() {
+	@RequestMapping(method = RequestMethod.GET)
+	public ModelAndView defaultRedirect() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("redirect:links/default");
 		return mav;
 	}
+
 }

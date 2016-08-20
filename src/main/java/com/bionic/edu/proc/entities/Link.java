@@ -14,30 +14,24 @@ import javax.persistence.ManyToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreRemove;
 
-
 @Entity
 public class Link {
-	
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
-    private String title;
-    private String linkAddress;
-    private String description;
-    
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE},
-    		fetch = FetchType.LAZY) 
-    @JoinTable(name="CATEGORIZE",
-    joinColumns=
-        @JoinColumn(name="linkId", referencedColumnName="id"),
-    inverseJoinColumns=
-        @JoinColumn(name="categoryId", referencedColumnName="id")
-    )  
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String title;
+	private String linkAddress;
+	private String description;
+
+	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.LAZY)
+	@JoinTable(name = "CATEGORIZE", joinColumns = @JoinColumn(name = "linkId", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "categoryId", referencedColumnName = "id"))
 	private Collection<Category> categories;
-    
-    private int rating;
-    
-    public Link() {}
+
+	private int rating;
+
+	public Link() {
+	}
 
 	public Link(String linkAddress, String title, String description, int rating) {
 		this.linkAddress = linkAddress;
@@ -93,20 +87,19 @@ public class Link {
 	public void setRating(int rating) {
 		this.rating = rating;
 	}
-	
+
 	@PreRemove
 	private void removeLinksFromCategoryTree() {
-	    for (Category c : categories) {
-	        c.getLinks().remove(this);
-	    }
+		for (Category c : categories) {
+			c.getLinks().remove(this);
+		}
 	}
-	
+
 	@PrePersist
 	private void addLinkToCategoryTree() {
-	    for (Category c : categories) {
-	        c.getLinks().add(this);
-	    }
+		for (Category c : categories) {
+			c.getLinks().add(this);
+		}
 	}
-	    
-}
 
+}

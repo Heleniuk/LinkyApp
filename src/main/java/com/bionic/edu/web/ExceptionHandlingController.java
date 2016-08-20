@@ -13,14 +13,15 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ExceptionHandlingController {
 
-	@ResponseStatus(value=HttpStatus.BAD_REQUEST)
+	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(IllegalArgumentException.class)
 	public ModelAndView handleError(HttpServletRequest req, IllegalArgumentException ex) {
-	    
-	    ModelAndView mav = new ModelAndView();
-	    mav.addObject("errorMessage", ex.getMessage());
-	    mav.setViewName("error");
-	    return mav;
-	    
-	  }
+
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("errorMessage", ex.getMessage());
+		mav.setViewName("error");
+		return mav;
+
+	}
+
 }

@@ -17,27 +17,27 @@ import javax.persistence.Transient;
 public class Category {
 
 	@Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private int id;
-    private String title;
-    private String description;
-    
-	@ManyToMany(mappedBy="categories", 
-			cascade = {CascadeType.PERSIST, CascadeType.MERGE}) 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String title;
+	private String description;
+
+	@ManyToMany(mappedBy = "categories", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	private Collection<Link> links;
-	
+
 	@OneToOne
-	@JoinColumn(name="parentId")
+	@JoinColumn(name = "parentId")
 	private Category parent;
-	
+
 	@Transient
 	private List<Category> children;
-		
-	public Category() {}
+
+	public Category() {
+	}
 
 	public Category(String title, String description) {
 		this.title = title;
-		this.description = description; 
+		this.description = description;
 	}
 
 	public int getId() {
@@ -63,7 +63,7 @@ public class Category {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 	public Collection<Link> getLinks() {
 		return links;
 	}
@@ -87,5 +87,5 @@ public class Category {
 	public void setChildren(List<Category> children) {
 		this.children = children;
 	}
-	
+
 }

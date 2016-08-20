@@ -22,4 +22,5 @@ public interface LinkValidationConstants {
 		public static final String CATEGORIES_SIZE_ERROR = "A link can be tied to no more than " + LinkValidationConstants.CATEGORIES_SIZE + " categories";
 		public static final String CATEGORIES_NOT_EMPTY_ERROR = "A link should be tied to a category";
 	}
+	
 }

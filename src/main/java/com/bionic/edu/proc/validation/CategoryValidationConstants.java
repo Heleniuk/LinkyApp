@@ -12,4 +12,5 @@ public interface CategoryValidationConstants {
 		public static final String TITLE_PATTERN_ERROR = "Title should only contain letters, symbols or whitespace characters";
 		public static final String DESCRIPTION_SIZE_ERROR = "Description cannot be longer than " + CategoryValidationConstants.DESCRIPTION_SIZE + " symbols";
 	}
+	
 }
