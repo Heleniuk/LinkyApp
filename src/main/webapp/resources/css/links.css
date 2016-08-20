@@ -1,0 +1,102 @@
+@CHARSET "UTF-8";
+
+.bottom-panel {
+	align: center;
+	margin-left: 30px;
+	margin-right: 40px;
+	margin-top: 10px;
+}
+
+.top-panel-links {
+	margin-top: 60px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	margin-right: 33px;
+}
+
+.top-panel-categories {
+	margin-top: 60px;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	margin-right: 3px;
+}
+
+.repellable-bottom {
+	margin-bottom: 10px;
+}
+.repellable-top {
+	margin-top: 10px;
+}
+.repellable-right {
+	margin-right: 10px;
+}
+.repellable-left {
+	margin-left: 6px;
+}
+
+#inputForm .form-control {
+	margin-top: 10px;
+}
+
+.submittable {
+	margin: 13px 33%;
+	width: 33%;
+}
+
+.hidden {
+	display: none;
+}
+
+.selectpicker {
+	margin-left: -20px;
+}
+
+.special {
+  display: none !important;
+}
+.container {
+	width: 100% !important;
+}
+.title {
+	font-weight: bold;
+	font-size: 1em;
+	vertical-align: middle;
+}
+
+.link-cell {
+	height: 125px;
+}
+.desc-cell {
+	height: 53px;
+	font-size: 0.9em;
+	font-weight: none;
+}
+.title-cell {
+	height: 20px;
+	margin-bottom: 5px;
+}
+.categories-cell {
+	height: 35px;
+	text-transform: lowercase;
+}
+
+.glyphicon-trash, .glyphicon-pencil {
+	color: black !important;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+.xxs {
+	font-size: 0.8em;
+	font-weight: none;
+}
+.error {
+	color: red;
+	font-size: 0.7em;
+	font-weight: none;
+}
+button {
+	background: none;
+	border: none;
+}
