@@ -12,7 +12,7 @@ public class DefaultController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView defaultRedirect() {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("redirect:links/default");
+		mav.setViewName("redirect:links");
 		return mav;
 	}
 

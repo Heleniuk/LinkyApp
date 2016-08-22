@@ -25,7 +25,7 @@ public class LinksController {
 	@Inject
 	CategoryService categoryService;
 
-	@RequestMapping(value = "/default", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView defaultSearch() {
 
 		ModelAndView mav = new ModelAndView();
@@ -110,7 +110,7 @@ public class LinksController {
 
 		} else {
 			linkService.add(linkFormModel);
-			mav.setViewName("redirect:/links/default");
+			mav.setViewName("redirect:/links");
 			return mav;
 		}
 
@@ -120,7 +120,7 @@ public class LinksController {
 	public ModelAndView deleteLink(@PathVariable String linkId) {
 		ModelAndView mav = new ModelAndView();
 		linkService.delete(Integer.valueOf(linkId));
-		mav.setViewName("redirect:/links/default");
+		mav.setViewName("redirect:/links");
 		return mav;
 	}
 
@@ -169,7 +169,7 @@ public class LinksController {
 
 		} else {
 			linkService.update(linkFormModel);
-			mav.setViewName("redirect:/links/default");
+			mav.setViewName("redirect:/links");
 			return mav;
 		}
 

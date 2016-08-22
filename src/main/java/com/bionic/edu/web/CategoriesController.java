@@ -22,7 +22,7 @@ public class CategoriesController {
 	@Inject
 	CategoryService categoryService;
 
-	@RequestMapping(value = "/default", method = RequestMethod.GET)
+	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView showCategories() {
 
 		ModelAndView mav = new ModelAndView();
@@ -61,7 +61,7 @@ public class CategoriesController {
 
 			categoryService.add(categoryFormModel);
 			mav.addObject("categoryFormModel", new CategoryFormModel());
-			mav.setViewName("redirect:/categories/default");
+			mav.setViewName("redirect:/categories");
 			return mav;
 
 		}
@@ -74,7 +74,7 @@ public class CategoriesController {
 		ModelAndView mav = new ModelAndView();
 		int id = Integer.valueOf(categoryId);
 		categoryService.delete(id);
-		mav.setViewName("redirect:/categories/default");
+		mav.setViewName("redirect:/categories");
 		return mav;
 
 	}
@@ -122,7 +122,7 @@ public class CategoriesController {
 		} else {
 
 			categoryService.update(categoryFormModel);
-			mav.setViewName("redirect:/categories/default");
+			mav.setViewName("redirect:/categories");
 			return mav;
 
 		}

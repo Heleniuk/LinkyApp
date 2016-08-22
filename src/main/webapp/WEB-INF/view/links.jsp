@@ -4,34 +4,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-<head>
-<link href="<c:url value="/resources/css/links.css"/>" rel="stylesheet">
-<link href="<c:url value="/resources/css/star-rating.css"/>" media="all"
-	rel="stylesheet" type="text/css" />
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-	crossorigin="anonymous" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-	crossorigin="anonymous"></script>
-<script src="<c:url value="/resources/js/star-rating.js"/>"
-	type="text/javascript"></script>
-<script src="<c:url value="/resources/js/links.js"/>"
-	type="text/javascript"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>LinkyApp</title>
-</head>
+<jsp:include page="header.jsp"/>
 
-<body page="links">
-	<jsp:include page="header.jsp"/>
+<body page="links">	
 	<div class="top-panel-links">
 		<div class="row">
 			<div class="col-md-11"></div>
@@ -39,7 +14,7 @@
 				<div class="row">
 					<c:url var="addUrl" value="/links/add"/>	
 					<c:url var="searchUrl" value="/links/search"/>
-					<c:url var="defaultUrl" value="/links/default"/>
+					<c:url var="defaultUrl" value="/links"/>
 					<!-- add button -->		
 					<a href="${addUrl}">
 						<button class="btn btn-md btn-default plus" type="button">
@@ -51,7 +26,7 @@
 						<button class="btn btn-md btn-default search" type="button">
 							<span class="glyphicon glyphicon-search" aria-hidden="false"></span>
 						</button>
-					</a>	
+					</a>
 				</div>
 			</div>	
 		</div>	
